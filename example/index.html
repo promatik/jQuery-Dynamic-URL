@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dinamic URL Examples</title>
+		<meta property="og:title" content="Dynamic URL Plugin, @promatik"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:image" content="http://promatik.no.sapo.pt/images/promatik.jpg"/>
+		<meta property="og:description" content="Dynamic URL provides easy access to information in the URL, it also allows to programmatically modify the URL while user browse the page."/>
+		<meta property="og:url" content="http://promatik.no.sapo.pt/github/dynamic-url/"/>
+		<meta property="fb:admins" content="100000258524385"/>
+		<meta property="fb:app_id" content="150154111693861"/>
+		
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.js"></script>
+		<script type="text/javascript" src="jquery.dynamic-url.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	
+	<body>
+	<div id="fb-root">&nbsp;</div>
+	<div id="head-fix">
+		<div id="head">
+			<div id="btn-demo" class="menu-item">Demo</div>
+			<div id="btn-download" class="menu-item">Download</div>
+			<div id="btn-support" class="menu-item">Support</div>
+			<div id="btn-author" class="menu-item">Toni Almeida, @promatik</div>
+		</div>
+	</div>
+	
+	<div id="demo" class="content">
+		<h1>jQuery Dynamic URL <span class="function">Demo</span></h1>
+		
+		<div class="separator">&nbsp;</div>
+		<h2>$.getPath()</h2>
+		<div class="code">
+			<span class="function">$.getPath();</span>
+			<div class="margin">["<span class="string">github</span>", "<span class="string">dynamic-url</span>"]</div>
+		</div>
+		<p class="description">This function return an Array with all the path's</p>
+		
+		
+		<div class="separator">&nbsp;</div>
+		<h2>$.pushPath( level, path, data )</h2>
+		<div class="code">
+			<span class="function">$.pushPath(2, "newlevel", "This is the data element, its a String, but could be anything, any kind of object");</span>
+			<div class="margin"><span class="string">http://promatik.no.sapo.pt/github/dynamic-url/newlevel/</span></div>
+			<button id="action-push" class="btn">Click to run this</button>
+			<br />
+			<span class="function">$.getPath();</span>
+			<div class="margin">["<span class="string">github</span>", "<span class="string">dynamic-url</span>", "<span class="string">newlevel</span>"]</div>
+		</div>
+		<p class="description">Did you notice the changes in the browser URL bar?</p>
+		
+		
+		<div class="separator">&nbsp;</div>
+		<h2>$.popPath( level, updateURL )</h2>
+		<div class="code">
+			<span class="function">$.popPath(1);</span>
+			<div class="margin"><span class="string">http://promatik.no.sapo.pt/github/</span></div>
+			<button id="action-pop" class="btn">Click to run this</button>
+			<br />
+			<span class="function">$.getPath();</span>
+			<div class="margin">["<span class="string">github</span>"]</div>
+		</div>
+		<p class="description">All the paths after the first ( $.popPath(1) ), were removed...</p>
+		
+		
+		<div class="separator">&nbsp;</div>
+		<h2>$.onPopState( callback )</h2>
+		<div class="code">
+			<span class="function">
+				$.onPopState(function(e) {<br />
+					<div class="margin">alert(e.state);</div>
+				});
+			</span><br />
+			<button id="action-popstate" class="btn">Click to run this</button>
+			<br />
+			<div class="margin"><span class="comment">//After running this, try to go back and forward in your browser!!!</span></div>
+			<br />
+		</div>
+		<p class="description">
+			This is where the funny beggins...<br />
+			With this event listener you know when the user go back or forward in history, and you can associate a data object to each history entry! 
+		</p>
+		
+		
+		<div class="separator">&nbsp;</div>
+		<h2>$.pushVar( key, value, data, updateURL)</h2>
+		<p class="description">Lets add some vars to our URL</p>
+		<div class="code">
+			<span class="function">
+				$.pushVar("grass", "green", "", false);<br />
+				$.pushVar("sky", "blue", "", false);<br />
+				$.pushVar("sun", "red", "You can also add some data here", true);<br />
+			</span>
+			<button id="action-pushVar" class="btn">Click to run this</button>
+			<br />
+		</div>
+		<p class="description">
+			Did you notice that I set the data as an empty string in the first two pushVars?<br />
+			Thats because I set the updateURL as false, so nothing will be updated, only at the third call...
+		</p>
+		
+		
+		<div class="separator">&nbsp;</div>
+		<h2>$.popVar( key, updateURL )</h2>
+		<p class="description">As the sun is not red, is more like orange, lets remove that var ...</p>
+		<div class="code">
+			<span class="function">$.popVar("sun");</span>
+			<br />
+			<button id="action-popVar" class="btn">Click to run this</button>
+		</div>
+		
+		
+		<div class="separator">&nbsp;</div>
+		<h2>$.getVars( )</h2>
+		<div class="code">
+			<span class="function">$.getVars();</span>
+			<br />
+			<div class="margin">{"<span class="string">grass</span>" : "<span class="string">green</span>", "<span class="string">sky</span>" : "<span class="string">blue</span>"}</div>
+			<br />
+		</div>
+		<div class="code">
+			<span class="function">$.getVars().grass;</span>
+			<br />
+			<div class="margin">"<span class="string">green</span>"</div>
+			<br />
+		</div>
+		
+		
+		<div class="separator">&nbsp;</div>
+		<h2>$.getURL( )</h2>
+		<div class="code">
+			<span class="function">alert( $.getURL() );</span>
+			<br />
+			<div class="margin">"<span class="string">http://promatik.no.sapo.pt/github/dynamic-url/?grass=green&sky=blue</span>"</div>
+			<br />
+			<button id="action-getURL" class="btn">Click to run this</button>
+		</div>
+		<p class="description">Easy isn't it?</p>
+	</div>
+	
+	<div id="download" class="content">
+		<h1>jQuery Dynamic URL <span class="function">Download</span></h1>
+		
+		<p>It's highly recommended to download the plugin from GitHub, because it's always updated there!</p>
+		
+		<p>Here is the link to GitHub: <a href="https://github.com/promatik/jQuery-Dynamic-URL">https://github.com/promatik/jQuery-Dynamic-URL</a></p>
+	</div>
+	
+	<div id="support" class="content">
+		<h1>jQuery Dynamic URL <span class="function">Support</span></h1>
+		
+		<p>Support requests and general discussions about the Dynamic URL plugin can be posted here.</p>
+		<p>If your question is not directly related to the Dynamic URL plugin, you might have a better chance to get a reply by posting to Stack Overflow. Bugs and Feature requests can be reported using the issues tracker at GitHub.</p>
+		
+		<div class="comments">
+			<div class="fb-comments" data-href="http://promatik.no.sapo.pt/github/dynamic-url/" data-width="700" data-num-posts="10" style="width:100%"></div>
+		</div>
+	</div>
+	
+	</body>
+</html>
+

@@ -1,0 +1,102 @@
+html {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAABsAgMAAADyCL9eAAAAA3NCSVQICAjb4U/gAAAADFBMVEV0f4N4g4d8hoqBio3bA46eAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAQ5JREFUSIm9VjsOwyAMZWHpqbJkyUzvw5KlJ4lyjy69VOrPC6SqZLr0IRQRnm35YWOTUjD2x3afi3xlpptO3Vnsl40N/Nwrviq+FlW1HTo2Ok9jg8VpQw2wsWhAyQR7TNYiCzoWnqeLT2pAlSosHa+NjoXneRLyvAZR4bdsdGyQny0CSvGcyCUqFvpZoeqynikoG2wsjPuUmoaLq0bWakHHBnHXCMzlePZo9FpHxX6IuxUz4QrVyWsdGQv9vBx/q2S+oGM/+Ykem4uzFN50LBroD5fmoJ0hX3sHDQv9NDYQtDsnnQG3kI0N/GwFDCwXbRTWO8hYmJ+f75ee1PnrbfN3LPSzZUoFUa9nwpuNvQGCQWQbBI1IJQAAAABJRU5ErkJggg==");
+}
+
+html, body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Ubuntu', sans-serif;
+}
+#head-fix {
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
+#head {
+	width: 80%;
+	height: 50px;
+	margin: auto;
+	padding: 0 30px;
+	
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	background-color: rgba(255,255,255,0.96);
+	box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+}
+
+.content {
+	width: 80%;
+	min-height: 200px;
+	margin: 80px auto;
+	padding: 10px 30px;
+	
+	border-radius: 4px;
+	background-color: rgba(255,255,255,0.96);
+	box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+}
+
+.menu-item {
+	min-width: 80px;
+	float: left;
+	height: 100%;
+	padding: 0 10px;
+	line-height: 50px;
+	font-size: 13px;
+	text-shadow: 0px 1px 0px rgba(255,255,255,1);
+	cursor: pointer;
+	text-align: center;
+}
+.menu-item:hover {
+	background-color: #EEE;
+}
+.menu-item:active, .menu-item.active {
+	background-color: #DDD;
+	box-shadow: inset 0 1px 10px rgba(0,0,0,0.3);
+}
+
+.btn {
+	margin: 10px 0px 20px;
+}
+
+.separator {
+	height: 1px;
+	background-color: #CCC;
+	border-bottom: 1px solid #FFF;
+	margin-bottom: 30px;
+}
+
+.code {
+	background-color: #EEE;
+	padding: 3px;
+	line-height: 18px;
+	font-family: monospace;
+	padding-left: 10px;
+}
+.function {
+	color: #0080FF;
+}
+.description {
+	font-size: 13px;
+	margin-bottom: 20px;
+	color: #555;
+}
+.string {
+	color: #C41A16;
+}
+.comment {
+	color: #555555;
+}
+.comments {
+	margin-top: 35px;
+	text-align: center;
+	width: 100%;
+}
+.margin {
+	margin-left: 8px;
+}
+a {
+	color: #0080FF;
+	text-decoration: none;
+}
