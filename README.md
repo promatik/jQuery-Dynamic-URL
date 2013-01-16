@@ -8,7 +8,10 @@
 
 ## Setup
 * How to setup the plugin on your website:
-* '<script type="text/javascript" src="jquery.dynamic-url.js"></script>'
+```javascript
+<script type="text/javascript" src="jquery.dynamic-url.js"></script>
+```
+
 
 ## Support
 * **Support requests** and **general discussions** about the Dynamic URL plugin can be posted to the official [support forum](https://groups.google.com/forum/#!forum/jquery-dynamic-url).  
