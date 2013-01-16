@@ -1,5 +1,9 @@
 # jQuery Dynamic URL v1.0
 
+## Description
+With this plugin, you can easly change URL adress instanly when you load AJAX content into it.
+Furthermore you can access paths and querystring parameters.
+
 ## Demo
 [Demo Dynamic URL](http://promatik.no.sapo.pt/github/dynamic-url/)
 
