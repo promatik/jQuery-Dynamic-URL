@@ -25,7 +25,7 @@
      */
 
     $.loadURL = function( url ) {
-    	var parsed = parseURL(url ? url : window.location.pathname);
+    	var parsed = parseURL(url ? url : window.location.href);
     	path = parsed.pathname.split("/").filter(function(e){return e;});
     	search = parsed.search != "" ? splitSearch( parsed.search ) : new Array();
     	domain = parsed.protocol + "//" + parsed.host;
