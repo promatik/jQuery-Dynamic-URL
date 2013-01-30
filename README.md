@@ -1,7 +1,7 @@
 # jQuery Dynamic URL v1.0
 
 ## Description
-With this plugin, you can easly change URL adress instanly when you load AJAX content into it.
+With this plugin, you can easily change URL address instantly when you load AJAX content into page.
 Furthermore you can access paths and querystring parameters.
 
 ## Demo
