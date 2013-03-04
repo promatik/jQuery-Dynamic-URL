@@ -26,7 +26,7 @@
 
     $.loadURL = function( url ) {
     	var parsed = parseURL(url ? url : window.location.href);
-    	path = parsed.pathname.split("/").filter(function(e){return e;});
+    	path = cleanArray(parsed.pathname.split("/"));
     	search = parsed.search != "" ? splitSearch( parsed.search ) : new Array();
     	domain = parsed.protocol + "//" + parsed.host;
     };
@@ -218,5 +218,13 @@
     	parser.href = path;
     	return parser;
     }
+    
+    function cleanArray(actual){
+		var newArray = new Array();
+		for(var i=0; i<actual.length; i++) {
+			if (actual[i]) newArray.push(actual[i]);
+		}
+		return newArray;
+	}
 
 })( jQuery );
